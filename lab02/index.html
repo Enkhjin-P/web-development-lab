@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Java програмчлалын зуны сургалтад бүртгүүлэх анкет">
+  <meta name="author" content="Оюутан">
+  <title>Лаборатори 02 | Java зуны сургалтын бүртгэл</title>
+</head>
+<body>
+  
+  <header>
+    <h1>Java Зуны Сургалт 2026</h1>
+    <p><em>Программчлалын анхны алхмаа бидэнтэй хамт хийгээрэй.</em></p>
+
+    <nav aria-label="Үндсэн цэс">
+      <a href="../index.html">Нүүр</a> &middot;
+      <a href="#anket">Бүртгүүлэх</a> &middot;
+      <a href="#medeelel">Сургалтын мэдээлэл</a> &middot;
+      <a href="#sonirhol">Миний сонирхол</a> &middot;
+      <a href="#dun">Миний дүн</a>
+    </nav>
+  </header>
+
+  <hr>
+  <main>
+    <article id="anket">
+      <h2>Сургалтад бүртгүүлэх анкет</h2>
+      <p>
+        Доорх анкетыг бүрэн бөглөнө үү.
+      </p>
+
+      <form action="#" method="POST" enctype="multipart/form-data" autocomplete="on">
+
+        <fieldset>
+          <legend>1. Хувийн мэдээлэл</legend>
+
+          <p>
+            <label for="lastname">Овог </label><br>
+            <input type="text" id="lastname" name="lastname" required minlength="2" maxlength="30"
+                   pattern="[А-Яа-яӨөҮүЁё]{2,}" title="Кирилл үсгээр, 2-оос дээш тэмдэгт"
+                   placeholder="Батаа" autofocus>
+          </p>
+
+          <p>
+            <label for="firstname">Нэр </label><br>
+            <input type="text" id="firstname" name="firstname" required minlength="2" maxlength="30"
+                   pattern="[А-Яа-яӨөҮүЁё]{2,}" title="Кирилл үсгээр, 2-оос дээш тэмдэгт"
+                   placeholder="Энхжин">
+          </p>
+
+          <p>
+            <label for="birthdate">Төрсөн огноо </label><br>
+            <input type="date" id="birthdate" name="birthdate" required
+                   min="1970-01-01" max="2011-12-31">
+          </p>
+
+          <fieldset>
+            <legend>Хүйс </legend>
+            <input type="radio" id="gender-f" name="gender" value="female" required>
+            <label for="gender-f">Эмэгтэй</label>
+            <input type="radio" id="gender-m" name="gender" value="male">
+            <label for="gender-m">Эрэгтэй</label>
+          </fieldset>
+
+          <p>
+            <label for="photo">Профайл зураг (заавал биш)</label><br>
+            <input type="file" id="photo" name="photo" accept="image/png, image/jpeg">
+          </p>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <legend>2. Нэвтрэх мэдээлэл</legend>
+
+          <p>
+            <label for="email">Имэйл хаяг </label><br>
+            <input type="email" id="email" name="email" required
+                   placeholder="name@gmail.com" autocomplete="email">
+          </p>
+
+          <p>
+            <label for="password">Нууц үг </label><br>
+            <input type="password" id="password" name="password" required minlength="8"
+                   pattern="(?=.*[A-Za-z])(?=.*[0-9]).{8,}"
+                   title="Хамгийн багадаа 8 тэмдэгт, үсэг болон тоо агуулсан байх"
+                   autocomplete="new-password"><br>
+            <small>Дор хаяж 8 тэмдэгт, үсэг ба тоо холилдсон байна.</small>
+          </p>
+        </fieldset>
+
+        <br>
+
+        
+        <fieldset>
+          <legend>3. Холбоо барих</legend>
+
+          <p>
+            <label for="phone">Утасны дугаар </label><br>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{8}"
+                   title="8 оронтой тоо бичнэ үү" placeholder="99112233">
+          </p>
+
+          <p>
+            <label for="city">Оршин суугаа хот/аймаг </label><br>
+            <input type="text" id="city" name="city" list="city-list" required minlength="3"
+                   placeholder="Сонгох эсвэл бичих">
+            <datalist id="city-list">
+              <option value="Улаанбаатар">
+              <option value="Дархан">
+              <option value="Эрдэнэт">
+              <option value="Хөвсгөл">
+              <option value="Архангай">
+            </datalist>
+          </p>
+
+          <p>
+            <label for="github">GitHub хаяг (байвал)</label><br>
+            <input type="url" id="github" name="github" pattern="https://github\.com/.+"
+                   title="https://github.com/ хэлбэрээр эхэлнэ" placeholder="https://github.com/username">
+          </p>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <legend>4. Сургалтын мэдээлэл</legend>
+
+          <p>
+            <label for="course">Сонгох чиглэл </label><br>
+            <select id="course" name="course" required>
+              <option value="">-- Чиглэлээ сонгоно уу --</option>
+              <optgroup label="Java">
+                <option value="java-basic">Java - Анхлан суралцагч</option>
+                <option value="java-oop">Java - Объект хандлагат (OOP)</option>
+                <option value="java-swing">Java - Swing ба өгөгдлийн сан</option>
+              </optgroup>
+              <optgroup label="Веб">
+                <option value="web-html">HTML ба CSS</option>
+                <option value="web-js">JavaScript</option>
+              </optgroup>
+            </select>
+          </p>
+
+          <fieldset>
+            <legend>Программчлалын туршлага </legend>
+            <input type="radio" id="exp-none" name="experience" value="none" required>
+            <label for="exp-none">Огт байхгүй</label><br>
+            <input type="radio" id="exp-some" name="experience" value="some">
+            <label for="exp-some">Бага зэрэг</label><br>
+            <input type="radio" id="exp-good" name="experience" value="good">
+            <label for="exp-good">Дунд зэрэг</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Ашигладаг хэрэгслүүд</legend>
+            <input type="checkbox" id="tool-idea" name="tools" value="intellij">
+            <label for="tool-idea">IntelliJ IDEA</label><br>
+            <input type="checkbox" id="tool-vscode" name="tools" value="vscode">
+            <label for="tool-vscode">VS Code</label><br>
+            <input type="checkbox" id="tool-git" name="tools" value="git">
+            <label for="tool-git">Git / GitHub</label>
+          </fieldset>
+
+          <p>
+            <label for="hours">Долоо хоногт зарцуулж чадах цаг (1-20)</label><br>
+            <input type="number" id="hours" name="hours" min="1" max="20" value="5" required>
+          </p>
+
+          <p>
+            <label for="goal">Сургалтаас юу хүлээж байна вэ? *</label><br>
+            <textarea id="goal" name="goal" rows="5" cols="50" required
+                      minlength="20" maxlength="300"
+                      placeholder="20-300 тэмдэгтийн хооронд бичнэ үү..."></textarea>
+          </p>
+        </fieldset>
+
+        <br>
+
+        
+        <fieldset>
+          <legend>5. Зөвшөөрөл</legend>
+          <p>
+            <input type="checkbox" id="agree" name="agree" value="yes" required>
+            <label for="agree">Сургалтын дүрэмтэй танилцаж, зөвшөөрч байна *</label>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Бүртгүүлэх</button>
+          <button type="reset">Цэвэрлэх</button>
+        </p>
+
+      </form>
+    </article>
+
+    <hr>
+
+    <aside id="medeelel">
+      <h2>Сургалтын товч мэдээлэл</h2>
+      <dl>
+        <dt>Эхлэх өдөр</dt>
+        <dd><time datetime="2026-06-15">2026 оны 6-р сарын 15</time></dd>
+
+        <dt>Үргэлжлэх хугацаа</dt>
+        <dd>8 долоо хоног</dd>
+
+        <dt>Хэрэгтэй програм</dt>
+        <dd><abbr title="Java Development Kit">JDK</abbr> 21 ба код бичих орчин</dd>
+
+        <dt>Байршил</dt>
+        <dd>
+          <address>Компьютерийн лаборатори, 3-р давхар</address>
+        </dd>
+      </dl>
+    </aside>
+
+    <hr>
+
+
+    <section id="sonirhol">
+      <h2>Миний сонирхол</h2>
+      <p>Чөлөөт цагаараа хийх дуртай зүйлс:</p>
+      <ul>
+        <li>Linux сурах</li>
+        <li>Дугуй унах</li>
+        <li>Гитар тоглох</li>
+      </ul>
+    </section>
+
+    <hr>
+    <section id="dun">
+      <h2>Миний дүн</h2>
+      <table border="1" cellpadding="8" cellspacing="0">
+        <caption>2026 оны хаврын улирлын дүн</caption>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">Хичээл</th>
+            <th scope="col">Кредит</th>
+            <th scope="col">Оноо</th>
+            <th scope="col">Үсгэн дүн</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Java програмчлал</td>
+            <td>3</td>
+            <td><meter min="0" max="100" value="90">90</meter> 90</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>Unix/Linux</td>
+            <td>3</td>
+            <td><meter min="0" max="100" value="85">85</meter> 85</td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>Программчлалын үндэс</td>
+            <td>3</td>
+            <td><meter min="0" max="100" value="93">93</meter> 93</td>
+            <td>A</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Дундаж</td>
+            <td>9</td>
+            <td>89.3</td>
+            <td>A-</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+  </main>
+
+  <hr>
+  <footer>
+    <p><small>&copy; 2026 Java Зуны Сургалт. Лаборатори 02 - Семантик HTML форм.</small></p>
+    <p><small>Холбоо барих: <a href="mailto:B251870083@must.edu.mn">B251870083@must.edu.mn</a></small></p>
+    <p>&copy;Бүх эрх хуулиар хамгаалагдсан.</p>
+  </footer>
+
+</body>
+</html>
