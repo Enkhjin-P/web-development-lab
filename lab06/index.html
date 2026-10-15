@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Brew &amp; Bean кофе шопын зургийн цомог, цэс, видео болон байршил.">
+  <title>Brew &amp; Bean cafe</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Үндсэн агуулга руу очих</a>
+
+  <header class="site-header">
+    <a class="logo" href="#home">
+      <svg class="logo-icon" viewBox="0 0 48 48" role="img" aria-labelledby="logo-title" width="36" height="36">
+        <title id="logo-title">Кофены аяга</title>
+        <path class="steam" d="M16 14c-3-4 3-6 0-10M24 14c-3-4 3-6 0-10M32 14c-3-4 3-6 0-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M8 20h28v10a10 10 0 0 1-10 10h-8A10 10 0 0 1 8 30z" fill="currentColor"/>
+        <path d="M36 23h3a4 4 0 0 1 0 8h-3" fill="none" stroke="currentColor" stroke-width="3"/>
+      </svg>
+      Brew &amp; Bean
+    </a>
+
+    <button id="menu-btn" class="menu-button" type="button" aria-label="Цэс нээх" aria-expanded="false" aria-controls="main-nav">☰</button>
+    <nav id="main-nav" class="main-nav" aria-label="Үндсэн цэс">
+      <ul>
+        <li><a href="#home">Нүүр</a></li>
+        <li><a href="#gallery">Цомог</a></li>
+        <li><a href="#menu">Цэс</a></li>
+        <li><a href="#video">Видео</a></li>
+        <li><a href="#contact">Холбоо барих</a></li>
+      </ul>
+    </nav>
+
+    <button id="theme-btn" class="theme-btn" type="button" aria-pressed="false">🌙 Харанхуй</button>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Өглөө бүрийн шинэхэн кофе</h1>
+    <p>Халуун дулаан уур амьсгал таныг дулаацуулна.</p>
+    <a class="btn" href="#gallery">Цомог үзэх</a>
+  </section>
+
+  <div class="page">
+    <main id="main">
+
+    
+      <section id="gallery">
+        <h2>Зургийн цомог</h2>
+        <div class="card-grid">
+          <figure class="photo" style="--i:0">
+            <a href="img/photo1.jpg"><img src="img/photo1.jpg" alt="Цонхны дэргэд тавьсан латте арттай аяга кофе" loading="lazy" width="1200" height="900"></a>
+            <figcaption>Цонхны дэргэдэх латте арттай кофе</figcaption>
+          </figure>
+          <figure class="photo" style="--i:1">
+            <a href="img/photo2.jpg"><img src="img/photo2.jpg" alt="Тавагтай шинэхэн шарсан кофены үр, шуудайн дээр" loading="lazy" width="1200" height="900"></a>
+            <figcaption>Байгалийн үнэртэй шарсан кофены үр</figcaption>
+          </figure>
+          <figure class="photo" style="--i:2">
+            <a href="img/photo3.jpg"><img src="img/photo3.jpg" alt="Мөс агуулсан өндөр шилэн аяга хүйтэн кофе" loading="lazy" width="1200" height="900"></a>
+            <figcaption>Зуны сэрүүцүүлэх мөстэй кофе</figcaption>
+          </figure>
+          <figure class="photo" style="--i:3">
+            <a href="img/photo4.jpg"><img src="img/photo4.jpg" alt="Ургамал, мод ширээтэй тав тухтай кофе шопын дотор" loading="lazy" width="1200" height="900"></a>
+            <figcaption>Ногоон ургамалтай дулаан уур амьсгал</figcaption>
+          </figure>
+          <figure class="photo" style="--i:4">
+            <a href="img/photo5.jpg"><img src="img/photo5.jpg" alt="Бариста аяганд сүү хийж латте арт урлаж байна" loading="lazy" width="1200" height="900"></a>
+            <figcaption>Сүүн хөөсөөр латте арт урлаж буй бариста</figcaption>
+          </figure>
+          <figure class="photo" style="--i:5">
+            <a href="img/photo6.jpg"><img src="img/photo6.jpg" alt="Круассан, чизкейк болон каппучино аяга ширээн дээр" loading="lazy" width="1200" height="900"></a>
+            <figcaption>Круассан, чизкейк, каппучино</figcaption>
+          </figure>
+        </div>
+      </section>
+
+     
+      <section id="menu">
+        <h2>Манай цэс</h2>
+        <div class="card-grid">
+          <article class="flip" style="--i:0">
+            <div class="flip-inner">
+              <div class="flip-front"><div class="thumb" aria-hidden="true">☕</div><h3>Эспрессо</h3><span class="price">5,500₮</span></div>
+              <div class="flip-back" aria-hidden="true"><h3>Эспрессо</h3><p>Хүчтэй, баялаг амттай сонгодог кофе.</p></div>
+            </div>
+            <button class="flip-btn" type="button" aria-pressed="false">Эспрессо</button>
+          </article>
+          <article class="flip" style="--i:1">
+            <div class="flip-inner">
+              <div class="flip-front"><div class="thumb" aria-hidden="true">🥛</div><h3>Латте</h3><span class="price">8,000₮</span></div>
+              <div class="flip-back" aria-hidden="true"><h3>Латте</h3><p>Зөөлөн сүүн хөөстэй, уян налархай амттай кофе.</p></div>
+            </div>
+            <button class="flip-btn" type="button" aria-pressed="false">Латте</button>
+          </article>
+          <article class="flip" style="--i:2">
+            <div class="flip-inner">
+              <div class="flip-front"><div class="thumb" aria-hidden="true">🍫</div><h3>Мокка</h3><span class="price">9,000₮</span></div>
+              <div class="flip-back" aria-hidden="true"><h3>Мокка</h3><p>Шоколад ба эспрессогийн төгс хослол.</p></div>
+            </div>
+            <button class="flip-btn" type="button" aria-pressed="false">Мокка</button>
+          </article>
+          <article class="flip" style="--i:3">
+            <div class="flip-inner">
+              <div class="flip-front"><div class="thumb" aria-hidden="true">🧊</div><h3>Iced Americano</h3><span class="price">7,000₮</span></div>
+              <div class="flip-back" aria-hidden="true"><h3>Iced Americano</h3><p>Хөргөсөн, сэргээгч зуны уух зүйл.</p></div>
+            </div>
+            <button class="flip-btn" type="button" aria-pressed="false">Iced Americano</button>
+          </article>
+          <article class="flip" style="--i:4">
+            <div class="flip-inner">
+              <div class="flip-front"><div class="thumb" aria-hidden="true">🥐</div><h3>Круассан</h3><span class="price">6,000₮</span></div>
+              <div class="flip-back" aria-hidden="true"><h3>Круассан</h3><p>Өглөө бүр шинээр жигнэсэн тослог круассан.</p></div>
+            </div>
+            <button class="flip-btn" type="button" aria-pressed="false">Круассан</button>
+          </article>
+          <article class="flip" style="--i:5">
+            <div class="flip-inner">
+              <div class="flip-front"><div class="thumb" aria-hidden="true">🍰</div><h3>Cheesecake</h3><span class="price">10,000₮</span></div>
+              <div class="flip-back" aria-hidden="true"><h3>Cheesecake</h3><p>Нэрстэй зөөлөн чизкейк.</p></div>
+            </div>
+            <button class="flip-btn" type="button" aria-pressed="false">Cheesecake</button>
+          </article>
+        </div>
+      </section>
+
+    
+      <section id="video">
+        <h2>Кофены үр</h2>
+        <video controls preload="metadata" poster="img/poster-video.jpg" width="1280" height="720">
+          <source src="video/clip.webm" type="video/webm">
+          <source src="video/clip.mp4" type="video/mp4">
+          <track kind="captions" src="video/clip.mn.vtt" srclang="mn" label="Монгол" default>
+          Таны хөтөч видео тоглуулахгүй байна.
+          <a href="video/clip.mp4">Видеог татаж авах</a>
+        </video>
+      </section>
+
+      <section id="map">
+        <h2>Байршил</h2>
+        <iframe title="Улаанбаатар хотын газрын зураг" loading="lazy" referrerpolicy="no-referrer"
+          sandbox="allow-scripts allow-same-origin"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=106.88%2C47.90%2C106.94%2C47.93&amp;layer=mapnik"></iframe>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <section class="side-box">
+        <h2>Ажлын цаг</h2>
+        <ul>
+          <li>Даваа–Баасан: 08:00 – 21:00</li>
+          <li>Бямба–Ням: 09:00 – 22:00</li>
+        </ul>
+      </section>
+      <section class="side-box">
+        <h2>Өнөөдрийн урамшуулал</h2>
+        <p>Хоёр латте авбал нэг круассан <strong>үнэгүй</strong>!</p>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <p>📍 Улаанбаатар, Баянгол дүүрэг</p>
+      <p>📞 <a href="tel:+97677000000">7700-0000</a></p>
+      <p>✉️ <a href="mailto:hello@brewbean.mn">hello@brewbean.mn</a></p>
+    </div>
+    <p class="copy">© 2026 Brew &amp; Bean. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </footer>
+</body>
+</html>
