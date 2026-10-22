@@ -1,0 +1,23 @@
+// ===== Видео ба газрын зураг (iframe) =====
+@use "../abstracts" as *;
+
+.media {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+
+  &--video {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    object-fit: contain;
+  }
+
+  &--map {
+    height: rem(320px);
+
+    @include respond(sm) { height: rem(240px); }
+  }
+}

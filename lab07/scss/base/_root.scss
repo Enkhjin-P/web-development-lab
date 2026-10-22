@@ -1,0 +1,27 @@
+// ===== :root дахь custom property-ууд =====
+@use "sass:map";
+@use "../abstracts" as *;
+
+:root {
+  @include theme-vars($theme-light);
+
+  @each $key, $value in $radii {
+    --radius-#{$key}: #{$value};
+  }
+  @each $key, $value in $spaces {
+    --space-#{$key}: #{$value};
+  }
+  @each $key, $value in $misc {
+    --#{$key}: #{$value};
+  }
+}
+
+[data-theme="dark"] {
+  @include theme-vars($theme-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @include theme-vars($theme-dark);
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "lab07-brew-and-bean",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lab 6 сайтыг SCSS болгон refactor хийсэн (Lab 7)",
+  "scripts": {
+    "build:dev": "sass --style=expanded --source-map scss/main.scss css/style.css",
+    "build": "sass --style=compressed --no-source-map scss/main.scss css/style.css",
+    "watch": "sass --watch --style=expanded --source-map scss/main.scss css/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}

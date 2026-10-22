@@ -1,0 +1,48 @@
+// ===== Хуудасны grid, section, sidebar =====
+@use "../abstracts" as *;
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr rem(300px);
+  gap: var(--space-lg);
+  max-width: rem(1200px);
+  margin: var(--space-lg) auto;
+  padding: 0 var(--space-md);
+
+  @include respond(md) { grid-template-columns: 1fr; }
+}
+
+.section { margin-bottom: rem(48px); }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+
+  @include respond(md) { grid-template-columns: repeat(2, 1fr); }
+  @include respond(sm) { grid-template-columns: 1fr; }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-self: start;
+  position: sticky;
+  top: var(--space-md);
+
+  @include respond(md) { flex-direction: row; position: static; }
+  @include respond(sm) { flex-direction: column; }
+}
+
+.side-box {
+  background: var(--surface);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+
+  &__title { font-size: 1.2rem; margin-bottom: rem(8px); }
+  &__item + &__item { margin-top: rem(4px); }
+
+  @include respond(md) { flex: 1; }
+}

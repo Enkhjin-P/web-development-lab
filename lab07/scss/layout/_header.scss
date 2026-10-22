@@ -1,0 +1,92 @@
+// ===== Header ба навигаци =====
+@use "../abstracts" as *;
+
+.skip-link {
+  position: absolute;
+  left: rem(8px);
+  top: -60px;
+  z-index: 10;
+  padding: rem(8px) rem(14px);
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+
+  &:focus { top: rem(8px); }
+}
+
+.site-header {
+  @include flex-center($gap: rem(16px), $justify: space-between);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--brand);
+  color: var(--on-brand);
+  position: relative;
+
+  &__logo {
+    @include flex-center($gap: rem(8px), $justify: flex-start);
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  &__steam {
+    animation: steam 2.4s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+
+  &__menu-btn {
+    display: none;
+    font: inherit;
+    font-size: 1.6rem;
+    line-height: 1;
+    padding: rem(4px) rem(10px);
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  @include respond(sm) {
+    padding: var(--space-sm) rem(16px);
+    flex-wrap: wrap;
+
+    &__theme-btn { margin-left: auto; }
+    &__menu-btn { display: block; }
+  }
+}
+
+.main-nav {
+  &__list {
+    display: flex;
+    gap: rem(8px);
+  }
+
+  &__link {
+    display: inline-block;
+    padding: rem(6px) rem(12px);
+    border-radius: var(--radius-xs);
+    transition: background var(--speed), color var(--speed), transform var(--speed);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--accent);
+      color: var(--on-accent);
+      transform: translateY(-2px);
+    }
+  }
+
+  @include respond(sm) {
+    width: 100%;
+    order: 5;
+
+    // JS байхгүй үед цэс харагдсаар байна
+    .js & { display: none; }
+    .js &--open { display: block; }
+
+    &__list {
+      flex-direction: column;
+      gap: rem(4px);
+      padding-top: rem(8px);
+    }
+  }
+}

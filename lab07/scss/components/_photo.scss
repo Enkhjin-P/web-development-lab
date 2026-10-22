@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+.photo {
+  overflow: hidden;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.6s ease backwards;
+  animation-delay: calc(var(--i) * 120ms);
+  transition: transform var(--speed), box-shadow var(--speed);
+
+  &__link { display: block; overflow: hidden; }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.6s;
+  }
+
+  &__caption { padding: rem(10px) rem(14px); font-weight: 600; }
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: var(--shadow-hover);
+  }
+
+  &:hover &__img,
+  &:focus-within &__img { transform: scale(1.08); }
+}

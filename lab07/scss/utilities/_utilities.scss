@@ -1,0 +1,22 @@
+// ===== Utility классууд (@each-ээр үүсгэсэн) =====
+@use "sass:map";
+@use "../abstracts" as *;
+
+// .u-mt-sm, .u-mb-md, .u-p-lg ...
+$sides: ("mt": margin-top, "mb": margin-bottom, "p": padding);
+
+@each $abbr, $property in $sides {
+  @each $size, $value in $spaces {
+    .u-#{$abbr}-#{$size} { #{$property}: var(--space-#{$size}); }
+  }
+}
+
+// .u-text-left / center / right
+@each $align in (left, center, right) {
+  .u-text-#{$align} { text-align: $align; }
+}
+
+// .u-rounded-xs / sm / md / pill
+@each $key, $value in $radii {
+  .u-rounded-#{$key} { border-radius: var(--radius-#{$key}); }
+}

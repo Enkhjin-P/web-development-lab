@@ -1,0 +1,63 @@
+// ===== Design tokens (map хэлбэрээр) =====
+@use "sass:map";
+@use "functions" as *;
+
+$ink: #1d1410; // харанхуй текст (on-accent)
+
+// --- Өнгө: гэрэлтэй загвар ---
+$brand-light: #4b2e1e;
+$accent-light: #c68b59;
+$theme-light: (
+  "bg": #f7efe4,
+  "surface": #ffffff,
+  "text": #4b2e1e,
+  "brand": $brand-light,
+  "accent": $accent-light,
+  "accent-text": #8a5a2b,
+  "hero-from": #8a5a2b,
+  "on-brand": contrast($brand-light, #f7efe4, $ink),
+  "on-accent": contrast($accent-light, #fff, $ink),
+  "shadow": 0 2px 8px rgba(0, 0, 0, 0.12),
+  "shadow-hover": 0 10px 24px rgba(0, 0, 0, 0.3),
+);
+
+// --- Өнгө: харанхуй загвар (зөвхөн өөрчлөгдөх утгууд) ---
+$brand-dark: #120c09;
+$theme-dark: (
+  "bg": #1d1410,
+  "surface": #2b1f19,
+  "text": #f1e6d8,
+  "brand": $brand-dark,
+  "accent": #d9a066,
+  "accent-text": #e3b07a,
+  "hero-from": #6b4423,
+  "on-brand": contrast($brand-dark, #f1e6d8, $ink),
+  "shadow": 0 2px 8px rgba(0, 0, 0, 0.6),
+);
+
+// --- Радиус ---
+$radii: (
+  "xs": 6px,
+  "sm": 8px,
+  "md": 12px,
+  "pill": 20px,
+);
+
+// --- Зай ---
+$spaces: (
+  "sm": 12px,
+  "md": 20px,
+  "lg": 32px,
+);
+
+// --- Бусад ---
+$misc: (
+  "speed": 0.35s,
+  "font": ("Inter", "Segoe UI", Roboto, Arial, sans-serif),
+);
+
+// --- Breakpoint (max-width) ---
+$breakpoints: (
+  "md": 992px,
+  "sm": 600px,
+);

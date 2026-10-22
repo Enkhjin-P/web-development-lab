@@ -1,0 +1,19 @@
+// .btn — CTA, theme toggle, flip товчны нийтлэг стиль
+@use "../abstracts" as *;
+
+.btn {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: var(--radius-pill);
+  padding: rem(8px) rem(18px);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  transition: transform var(--speed), filter var(--speed);
+
+  &:hover {
+    transform: scale(1.06);
+    filter: brightness(1.08);
+  }
+}

@@ -1,0 +1,45 @@
+
+@use "sass:math";
+@use "sass:color";
+
+@function rem($px, $base: 16px) {
+  @return math.div(math.div($px, 1px), math.div($base, 1px)) * 1rem;
+}
+
+
+@function lin-channel($value) {
+  $c: math.div($value, 255);
+  @if $c <= 0.03928 {
+    @return math.div($c, 12.92);
+  }
+  @return math.pow(math.div($c + 0.055, 1.055), 2.4);
+}
+
+@function luminance($color) {
+  $r: lin-channel(color.channel($color, "red", $space: rgb));
+  $g: lin-channel(color.channel($color, "green", $space: rgb));
+  $b: lin-channel(color.channel($color, "blue", $space: rgb));
+  @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+}
+
+
+@function contrast($bg, $light: #fff, $dark: #000) {
+  $l-bg: luminance($bg) + 0.05;
+  $l-light: luminance($light) + 0.05;
+  $l-dark: luminance($dark) + 0.05;
+
+  $ratio-light: math.div($l-bg, $l-light);
+  @if $l-light > $l-bg {
+    $ratio-light: math.div($l-light, $l-bg);
+  }
+
+  $ratio-dark: math.div($l-bg, $l-dark);
+  @if $l-dark > $l-bg {
+    $ratio-dark: math.div($l-dark, $l-bg);
+  }
+
+  @if $ratio-light > $ratio-dark {
+    @return $light;
+  }
+  @return $dark;
+}

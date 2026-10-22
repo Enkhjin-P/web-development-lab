@@ -1,0 +1,46 @@
+// ===== Flip card (цэсний карт) =====
+@use "../abstracts" as *;
+
+.flip {
+  @include flex-center(column, rem(10px));
+  perspective: 1000px;
+  animation: fadeUp 0.6s ease backwards;
+  animation-delay: calc(var(--i) * 120ms);
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: rem(210px);
+    transform-style: preserve-3d;
+    transition: transform 0.7s;
+  }
+
+  &--flipped &__inner { transform: rotateY(180deg); }
+
+  @media (hover: hover) {
+    &:hover &__inner { transform: rotateY(180deg); }
+    &--flipped:hover &__inner { transform: rotateY(0); }
+  }
+
+  &__face {
+    @include flex-center(column, rem(8px));
+    position: absolute;
+    inset: 0;
+    padding: rem(16px);
+    text-align: center;
+    background: var(--surface);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    &--back {
+      transform: rotateY(180deg);
+      background: var(--accent);
+      color: var(--on-accent);
+    }
+  }
+
+  &__thumb { font-size: 3rem; }
+  &__price { font-weight: 700; color: var(--accent-text); }
+}

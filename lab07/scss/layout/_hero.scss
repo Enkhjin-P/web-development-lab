@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+.hero {
+  @include flex-center(column, var(--space-sm));
+  text-align: center;
+  padding: rem(72px) var(--space-md);
+  background: linear-gradient(135deg, var(--hero-from), var(--brand));
+  color: #fff;
+
+  &__title {
+    font-size: 2.2rem;
+    animation: fadeUp 0.8s ease backwards;
+  }
+
+  &__text {
+    max-width: rem(560px);
+    animation: fadeUp 0.8s 0.2s ease backwards;
+  }
+
+  &__cta {
+    display: inline-block;
+    margin-top: rem(4px);
+    animation: fadeUp 0.8s 0.4s ease backwards;
+  }
+
+  @include respond(sm) {
+    padding: rem(48px) rem(16px);
+
+    &__title { font-size: 1.6rem; }
+  }
+}

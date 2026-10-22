@@ -1,0 +1,18 @@
+// ===== Brew & Bean — үндсэн SCSS файл =====
+// abstracts нь CSS гаргадаггүй (зөвхөн token/function/mixin)
+@use "base/root";
+@use "base/base";
+@use "base/animations";
+
+@use "layout/header";
+@use "layout/hero";
+@use "layout/page";
+@use "layout/footer";
+
+@use "components/button";
+@use "components/photo";
+@use "components/flip";
+@use "components/media";
+
+@use "utilities/utilities";
+@use "utilities/a11y";

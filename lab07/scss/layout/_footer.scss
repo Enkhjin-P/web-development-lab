@@ -1,0 +1,26 @@
+@use "../abstracts" as *;
+
+.site-footer {
+  background: var(--brand);
+  color: var(--on-brand);
+  padding: rem(28px) var(--space-lg);
+
+  &__inner {
+    @include flex-center($gap: rem(16px), $justify: space-around);
+    flex-wrap: wrap;
+
+    @include respond(sm) { flex-direction: column; }
+  }
+
+  &__link {
+    &:hover,
+    &:focus-visible { text-decoration: underline; }
+  }
+
+  &__copy {
+    text-align: center;
+    margin-top: rem(16px);
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+}

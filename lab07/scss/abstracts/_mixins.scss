@@ -1,0 +1,32 @@
+
+@use "sass:map";
+@use "tokens" as *;
+
+
+@mixin respond($key) {
+  @if map.has-key($breakpoints, $key) {
+    @media (max-width: map.get($breakpoints, $key)) {
+      @content;
+    }
+  } @else {
+    @error "Үл мэдэгдэх breakpoint: #{$key}. Боломжит: #{map.keys($breakpoints)}";
+  }
+}
+
+
+@mixin flex-center($direction: row, $gap: null, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: $justify;
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+
+@mixin theme-vars($theme) {
+  @each $name, $value in $theme {
+    --#{$name}: #{$value};
+  }
+}
