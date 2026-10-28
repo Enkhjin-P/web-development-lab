@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лаб 8 — Bootstrap ба Tailwind CSS</title>
+  <meta name="description" content="Лаб 8: Brew & Bean хуудсыг Bootstrap 5 болон Tailwind CSS v4-ээр хоёр удаа бүтээсэн.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{--bg:#f7efe4;--fg:#4b2e1e;--card:#fff;--brand:#c68b59;--on-brand:#1d1410;--accent:#8a5a2b;--muted:#7a5c48;--shadow:0 2px 8px rgba(0,0,0,.12)}
+    @media (prefers-color-scheme:dark){:root{--bg:#1d1410;--fg:#f1e6d8;--card:#2b1f19;--brand:#d9a066;--accent:#e3b07a;--muted:#c9b3a0;--shadow:0 2px 8px rgba(0,0,0,.5)}}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6;background:var(--bg);color:var(--fg)}
+    header{padding:48px 16px 8px;text-align:center}
+    h1{margin:0 0 8px;font-size:clamp(1.8rem,5vw,2.6rem)}
+    header p{margin:0 auto;max-width:60ch;color:var(--muted)}
+    main{max-width:1040px;margin:0 auto;padding:24px 16px 48px}
+    .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+    .card{background:var(--card);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+    .preview{position:relative;aspect-ratio:8/5;overflow:hidden;background:var(--bg)}
+    .preview iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0;transform:scale(.33);pointer-events:none}
+    .preview .cover{position:absolute;inset:0}
+    .body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .body h2{margin:0;font-size:1.35rem}
+    .body ul{margin:0;padding-left:1.1em;color:var(--muted);font-size:.95rem}
+    .btn{display:inline-block;margin-top:auto;align-self:flex-start;padding:10px 20px;border-radius:999px;background:var(--brand);color:var(--on-brand);font-weight:600;text-decoration:none;transition:transform .2s,filter .2s}
+    .btn:hover{transform:scale(1.05);filter:brightness(1.1)}
+    a:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+    section.more{margin-top:36px;background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:18px 20px}
+    section.more h2{margin:0 0 8px;font-size:1.15rem}
+    section.more ul{margin:0;padding-left:1.1em}
+    section.more a{color:var(--accent)}
+    .tbl{overflow-x:auto;margin-bottom:12px}
+    table{border-collapse:collapse;width:100%;font-size:.95rem}
+    th,td{padding:8px 12px;text-align:left;border-bottom:1px solid rgba(127,127,127,.25)}
+    thead th{border-bottom:2px solid var(--brand)}
+    tbody th{font-weight:600}
+    section.more+section.more{margin-top:24px}
+    section.more p{margin:0;max-width:75ch}
+    code{background:rgba(127,127,127,.15);padding:1px 6px;border-radius:4px;font-size:.9em}
+    footer{text-align:center;padding:0 16px 32px;color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Лаб 8. Bootstrap ба Tailwind CSS</h1>
+    <p>Лаб 6-гийн Brew &amp; Bean фото цомгийн хуудсыг хоёр өөр CSS framework-оор бүтээсэн. Доорх хоёр хуудасны аль нэгийг нээж үзнэ үү.</p>
+  </header>
+
+  <main>
+    <div class="grid">
+      <article class="card">
+        <div class="preview"><iframe src="bootstrap/index.html" title="Bootstrap хувилбарын урьдчилсан харагдац" loading="lazy" tabindex="-1" aria-hidden="true"></iframe><a class="cover" href="bootstrap/index.html" aria-label="Bootstrap хуудсыг нээх"></a></div>
+        <div class="body">
+          <h2>Bootstrap 5.3.3</h2>
+          <ul>
+            <li>CDN-ээс ачаалсан Bootstrap, <code>custom.css</code> дотор <code>.btn-brand</code></li>
+            <li><code>app.js</code> — dark mode, цэс, form validation</li>
+          </ul>
+          <a class="btn" href="bootstrap/index.html">Bootstrap хуудсыг нээх →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="preview"><iframe src="tailwind/index.html" title="Tailwind хувилбарын урьдчилсан харагдац" loading="lazy" tabindex="-1" aria-hidden="true"></iframe><a class="cover" href="tailwind/index.html" aria-label="Tailwind хуудсыг нээх"></a></div>
+        <div class="body">
+          <h2>Tailwind CSS v4</h2>
+          <ul>
+            <li><code>src/input.css</code> дотор <code>@custom-variant</code>, <code>@theme</code></li>
+            <li>Build хийсэн <code>dist/output.css</code></li>
+          </ul>
+          <a class="btn" href="tailwind/index.html">Tailwind хуудсыг нээх →</a>
+        </div>
+      </article>
+    </div>
+
+    <section class="more" id="results">
+      <h2>Хэмжилт ба дүгнэлт</h2>
+      <div class="tbl"><table><thead><tr><th scope="col">Үзүүлэлт</th><th scope="col">Bootstrap</th><th scope="col">Tailwind</th></tr></thead><tbody><tr><th scope="row">Өөрийн CSS</th><td>5.4 KB (custom.css) + CDN-ийн Bootstrap</td><td>24.7 KB (dist/output.css)</td></tr><tr><th scope="row">HTML</th><td>17.2 KB</td><td>23.8 KB</td></tr><tr><th scope="row">JS (app.js)</th><td>2.2 KB</td><td>2.4 KB</td></tr><tr><th scope="row">Нэг зургийн card-ын class тоо</th><td>12</td><td>30</td></tr><tr><th scope="row">Lighthouse Performance</th><td>87</td><td>80</td></tr><tr><th scope="row">Accessibility / Best Practices / SEO</th><td>100 / 100 / 100</td><td>100 / 100 / 100</td></tr><tr><th scope="row">FCP</th><td>1204 ms</td><td>903 ms</td></tr><tr><th scope="row">LCP</th><td>3982 ms</td><td>5329 ms</td></tr><tr><th scope="row">TBT / CLS</th><td>0 ms / 0</td><td>0 ms / 0</td></tr><tr><th scope="row">Нийт ачаалсан хэмжээ</th><td>1189 KB</td><td>1140 KB</td></tr></tbody></table></div>
+      <p>Bootstrap-ийн card бэлэн component class-тай тул нэг card-ын markup хамаагүй богино (12 class, Tailwind-д 30), харин Tailwind-д utility class бүгд HTML дотор бичигдэх тул HTML ойролцоогоор 38% их (23.8 KB, Bootstrap-д 17.2 KB) боловч build хийсэн CSS зөвхөн ашигласан class-уудыг агуулдаг учраас нийт ачаалсан хэмжээ бага зэрэг бага (1140 KB, Bootstrap-д 1189 KB) бөгөөд FCP илүү хурдан (903 ms, Bootstrap-д 1204 ms). Гэсэн хэдий ч LCP Tailwind-д удаан (5329 ms, Bootstrap-д 3982 ms) учир Performance оноо Bootstrap-д өндөр (87, Tailwind-д 80); энэ зөрүүний шалтгааныг би тусад нь шалгаагүй. Accessibility, Best Practices, SEO гурав хоёуланд нь 100, TBT 0 ms, CLS 0 тул чанарын хувьд ялгаа гараагүй. Дүгнэж хэлбэл, хурдан бөгөөд цөөн markup-аар бэлэн загвар хийхэд Bootstrap тохиромжтой, харин жижиг CSS болон загварыг нарийн хянахад Tailwind давуу боловч HTML урт, class олонтой болдог. (Хэмжилтийг локал серверээр, хоёр хуудсанд ижил нөхцөлд, 5 удаа хийж медиан авсан.)</p>
+    </section>
+
+    <section class="more">
+      <h2>Бусад</h2>
+      <ul>
+        <li><a href="README.md">README</a> — ажлын тайлбар, дахин build хийх заавар</li>
+        <li><code>img/</code>, <code>video/</code> — Лаб 6-гийн зураг, видео (хоёр хуудсанд нийтлэг)</li>
+        <li><code>tools/</code> — хэмжилтийн скриптүүд (<code>server.js</code>, <code>test.py</code>, <code>lh.mjs</code>)</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    function fit(){document.querySelectorAll('.preview').forEach(function(p){p.firstElementChild.style.transform='scale('+p.clientWidth/1280+')'})}
+    addEventListener('resize',fit);fit();
+  </script>
+  <footer>Brew &amp; Bean — Вэб хөгжүүлэлтийн лаб</footer>
+</body>
+</html>

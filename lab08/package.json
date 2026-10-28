@@ -1,0 +1,21 @@
+{
+  "name": "lab08-bootstrap-tailwind",
+  "version": "1.0.0",
+  "description": "Лаб 8: Bootstrap ба Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd tailwind && tailwindcss -i src/input.css -o dist/output.css --minify",
+    "watch": "cd tailwind && tailwindcss -i src/input.css -o dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "bootstrap": "^5.3.3",
+    "chrome-launcher": "^1.2.2",
+    "lighthouse": "^13.5.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "private": true
+}

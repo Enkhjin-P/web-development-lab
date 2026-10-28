@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* Лаб 8, даалгавар 3: html[data-theme="dark"] байхад dark: variant ажиллана */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  /* Лаб 8, даалгавар 4: брэнд өнгө. bg-brand, text-brand ... классууд автоматаар үүснэ */
+  --color-brand: #c68b59;
+  --color-brand-night: #d9a066;
+  --color-on-brand: #1d1410;
+
+  /* Лаб 6-гийн бусад өнгө */
+  --color-cream: #f7efe4;
+  --color-espresso: #4b2e1e;
+  --color-espresso-night: #120c09;
+  --color-night: #1d1410;
+  --color-night-surface: #2b1f19;
+  --color-latte: #f1e6d8;
+  --color-hero-from: #8a5a2b;
+  --color-hero-from-night: #6b4423;
+  --color-accent-text: #8a5a2b;
+  --color-accent-text-night: #e3b07a;
+
+  --font-sans: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  --shadow-card: 0 2px 8px rgb(0 0 0 / 0.12);
+  --shadow-hover: 0 10px 24px rgb(0 0 0 / 0.3);
+
+  --animate-fade-up: fade-up 0.6s ease backwards;
+  --animate-steam: steam 2.4s ease-in-out infinite;
+  @keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+  @keyframes steam { 0%, 100% { opacity: 0.4; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-3px); } }
+}
+
+@layer base {
+  :focus-visible { outline: 3px solid var(--color-brand); outline-offset: 3px; }
+  a { color: inherit; text-decoration: none; }
+  .steam { transform-origin: center bottom; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

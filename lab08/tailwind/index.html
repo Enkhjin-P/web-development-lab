@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="mn" data-theme="light" class="scroll-smooth scroll-pt-4">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Brew &amp; Bean кофе шопын зургийн цомог, цэс, видео болон байршил (Tailwind).">
+  <title>Brew &amp; Bean cafe — Tailwind</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="dist/output.css">
+  <script>(function(d){try{var t=localStorage.getItem('theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)d.setAttribute('data-theme',t)}catch(e){}d.classList.add('js')})(document.documentElement)</script>
+</head>
+<body class="overflow-x-hidden bg-cream font-sans leading-relaxed text-espresso transition-colors duration-350 dark:bg-night dark:text-latte">
+  <a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-10 focus:rounded-lg focus:bg-brand focus:px-3.5 focus:py-2 focus:font-semibold focus:text-on-brand" href="#main">Үндсэн агуулга руу очих</a>
+
+  <header class="relative flex flex-wrap items-center justify-between gap-4 bg-espresso px-4 py-3 text-latte sm:flex-nowrap sm:px-8 dark:bg-espresso-night">
+    <a class="flex items-center gap-2 text-2xl font-bold" href="#home">
+      <svg viewBox="0 0 48 48" role="img" aria-labelledby="logo-title" width="36" height="36" class="shrink-0">
+          <title id="logo-title">Кофены аяга</title>
+          <path class="steam animate-steam" d="M16 14c-3-4 3-6 0-10M24 14c-3-4 3-6 0-10M32 14c-3-4 3-6 0-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M8 20h28v10a10 10 0 0 1-10 10h-8A10 10 0 0 1 8 30z" fill="currentColor"/>
+          <path d="M36 23h3a4 4 0 0 1 0 8h-3" fill="none" stroke="currentColor" stroke-width="3"/>
+        </svg>
+      Brew &amp; Bean
+    </a>
+    <button id="theme-btn" class="cursor-pointer rounded-full bg-brand px-4.5 py-2 font-semibold text-on-brand transition hover:scale-105 hover:brightness-110 dark:bg-brand-night ml-auto sm:order-last sm:ml-0" type="button" aria-pressed="false">🌙 Харанхуй</button>
+    <button id="menu-btn" class="cursor-pointer rounded-lg px-2.5 py-1 text-2xl leading-none sm:hidden" type="button" aria-label="Цэс нээх" aria-expanded="false" aria-controls="main-nav">☰</button>
+    <nav id="main-nav" class="order-last w-full max-sm:in-[.js]:hidden max-sm:in-[.js]:[&.is-open]:block sm:order-none sm:w-auto" aria-label="Үндсэн цэс">
+      <ul class="flex flex-col gap-1 pt-2 sm:flex-row sm:gap-2 sm:pt-0">
+          <li><a class="inline-block rounded-md px-3 py-1.5 transition hover:-translate-y-0.5 hover:bg-brand hover:text-on-brand focus-visible:bg-brand focus-visible:text-on-brand" href="#home">Нүүр</a></li>
+          <li><a class="inline-block rounded-md px-3 py-1.5 transition hover:-translate-y-0.5 hover:bg-brand hover:text-on-brand focus-visible:bg-brand focus-visible:text-on-brand" href="#gallery">Цомог</a></li>
+          <li><a class="inline-block rounded-md px-3 py-1.5 transition hover:-translate-y-0.5 hover:bg-brand hover:text-on-brand focus-visible:bg-brand focus-visible:text-on-brand" href="#menu">Цэс</a></li>
+          <li><a class="inline-block rounded-md px-3 py-1.5 transition hover:-translate-y-0.5 hover:bg-brand hover:text-on-brand focus-visible:bg-brand focus-visible:text-on-brand" href="#video">Видео</a></li>
+          <li><a class="inline-block rounded-md px-3 py-1.5 transition hover:-translate-y-0.5 hover:bg-brand hover:text-on-brand focus-visible:bg-brand focus-visible:text-on-brand" href="#feedback">Санал хүсэлт</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="flex flex-col items-center gap-3 bg-linear-to-br from-hero-from to-espresso px-4 py-12 text-center text-white sm:py-18 dark:from-hero-from-night dark:to-espresso-night" id="home">
+    <h1 class="animate-fade-up text-2xl font-bold sm:text-4xl">Өглөө бүрийн шинэхэн кофе</h1>
+    <p class="max-w-140 animate-fade-up [animation-delay:200ms]">Халуун дулаан уур амьсгал таныг дулаацуулна.</p>
+    <a class="cursor-pointer rounded-full bg-brand px-4.5 py-2 font-semibold text-on-brand transition hover:scale-105 hover:brightness-110 dark:bg-brand-night mt-1 inline-block animate-fade-up [animation-delay:400ms]" href="#gallery">Цомог үзэх</a>
+  </section>
+
+  <div class="mx-auto my-8 grid max-w-300 gap-8 px-5 lg:grid-cols-[1fr_300px]">
+    <main id="main" class="min-w-0">
+
+      <section id="gallery" class="mb-12">
+        <h2 class="mb-5 text-3xl font-bold">Зургийн цомог</h2>
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <figure class="group animate-fade-up overflow-hidden rounded-xl bg-white shadow-card transition duration-350 [animation-delay:calc(var(--i)*120ms)] hover:-translate-y-1.5 hover:scale-103 hover:shadow-hover focus-within:-translate-y-1.5 focus-within:scale-103 focus-within:shadow-hover dark:bg-night-surface" style="--i:0">
+            <a class="block overflow-hidden" href="../img/photo1.jpg"><img class="block aspect-4/3 h-auto w-full object-cover transition-transform duration-600 group-hover:scale-108 group-focus-within:scale-108" src="../img/photo1.jpg" alt="Цонхны дэргэд тавьсан латте арттай аяга кофе" loading="lazy" width="1200" height="900"></a>
+            <figcaption class="px-3.5 py-2.5 font-semibold">Цонхны дэргэдэх латте арттай кофе</figcaption>
+          </figure>
+          <figure class="group animate-fade-up overflow-hidden rounded-xl bg-white shadow-card transition duration-350 [animation-delay:calc(var(--i)*120ms)] hover:-translate-y-1.5 hover:scale-103 hover:shadow-hover focus-within:-translate-y-1.5 focus-within:scale-103 focus-within:shadow-hover dark:bg-night-surface" style="--i:1">
+            <a class="block overflow-hidden" href="../img/photo2.jpg"><img class="block aspect-4/3 h-auto w-full object-cover transition-transform duration-600 group-hover:scale-108 group-focus-within:scale-108" src="../img/photo2.jpg" alt="Тавагтай шинэхэн шарсан кофены үр, шуудайн дээр" loading="lazy" width="1200" height="900"></a>
+            <figcaption class="px-3.5 py-2.5 font-semibold">Байгалийн үнэртэй шарсан кофены үр</figcaption>
+          </figure>
+          <figure class="group animate-fade-up overflow-hidden rounded-xl bg-white shadow-card transition duration-350 [animation-delay:calc(var(--i)*120ms)] hover:-translate-y-1.5 hover:scale-103 hover:shadow-hover focus-within:-translate-y-1.5 focus-within:scale-103 focus-within:shadow-hover dark:bg-night-surface" style="--i:2">
+            <a class="block overflow-hidden" href="../img/photo3.jpg"><img class="block aspect-4/3 h-auto w-full object-cover transition-transform duration-600 group-hover:scale-108 group-focus-within:scale-108" src="../img/photo3.jpg" alt="Мөс агуулсан өндөр шилэн аяга хүйтэн кофе" loading="lazy" width="1200" height="900"></a>
+            <figcaption class="px-3.5 py-2.5 font-semibold">Зуны сэрүүцүүлэх мөстэй кофе</figcaption>
+          </figure>
+          <figure class="group animate-fade-up overflow-hidden rounded-xl bg-white shadow-card transition duration-350 [animation-delay:calc(var(--i)*120ms)] hover:-translate-y-1.5 hover:scale-103 hover:shadow-hover focus-within:-translate-y-1.5 focus-within:scale-103 focus-within:shadow-hover dark:bg-night-surface" style="--i:3">
+            <a class="block overflow-hidden" href="../img/photo4.jpg"><img class="block aspect-4/3 h-auto w-full object-cover transition-transform duration-600 group-hover:scale-108 group-focus-within:scale-108" src="../img/photo4.jpg" alt="Ургамал, мод ширээтэй тав тухтай кофе шопын дотор" loading="lazy" width="1200" height="900"></a>
+            <figcaption class="px-3.5 py-2.5 font-semibold">Ногоон ургамалтай дулаан уур амьсгал</figcaption>
+          </figure>
+          <figure class="group animate-fade-up overflow-hidden rounded-xl bg-white shadow-card transition duration-350 [animation-delay:calc(var(--i)*120ms)] hover:-translate-y-1.5 hover:scale-103 hover:shadow-hover focus-within:-translate-y-1.5 focus-within:scale-103 focus-within:shadow-hover dark:bg-night-surface" style="--i:4">
+            <a class="block overflow-hidden" href="../img/photo5.jpg"><img class="block aspect-4/3 h-auto w-full object-cover transition-transform duration-600 group-hover:scale-108 group-focus-within:scale-108" src="../img/photo5.jpg" alt="Бариста аяганд сүү хийж латте арт урлаж байна" loading="lazy" width="1200" height="900"></a>
+            <figcaption class="px-3.5 py-2.5 font-semibold">Сүүн хөөсөөр латте арт урлаж буй бариста</figcaption>
+          </figure>
+          <figure class="group animate-fade-up overflow-hidden rounded-xl bg-white shadow-card transition duration-350 [animation-delay:calc(var(--i)*120ms)] hover:-translate-y-1.5 hover:scale-103 hover:shadow-hover focus-within:-translate-y-1.5 focus-within:scale-103 focus-within:shadow-hover dark:bg-night-surface" style="--i:5">
+            <a class="block overflow-hidden" href="../img/photo6.jpg"><img class="block aspect-4/3 h-auto w-full object-cover transition-transform duration-600 group-hover:scale-108 group-focus-within:scale-108" src="../img/photo6.jpg" alt="Круассан, чизкейк болон каппучино аяга ширээн дээр" loading="lazy" width="1200" height="900"></a>
+            <figcaption class="px-3.5 py-2.5 font-semibold">Круассан, чизкейк, каппучино</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="menu" class="mb-12">
+        <h2 class="mb-5 text-3xl font-bold">Манай цэс</h2>
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="group animate-fade-up flex flex-col items-center gap-2.5 perspective-[1000px] [animation-delay:calc(var(--i)*120ms)]" style="--i:0">
+            <div class="flip-inner relative h-52.5 w-full transform-3d transition-transform duration-700 group-hover:rotate-y-180 group-[.is-flipped]:rotate-y-180 group-[.is-flipped]:group-hover:rotate-y-0">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden bg-white dark:bg-night-surface"><div class="text-5xl" aria-hidden="true">☕</div><h3 class="text-xl font-bold">Эспрессо</h3><span class="font-bold text-accent-text dark:text-accent-text-night">5,500₮</span></div>
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden rotate-y-180 bg-brand text-on-brand dark:bg-brand-night" aria-hidden="true"><h3 class="text-xl font-bold">Эспрессо</h3><p>Хүчтэй, баялаг амттай сонгодог кофе.</p></div>
+            </div>
+            <button class="flip-btn cursor-pointer rounded-full bg-brand px-4.5 py-2 font-semibold text-on-brand transition hover:scale-105 hover:brightness-110 dark:bg-brand-night" type="button" aria-pressed="false">Эспрессо</button>
+          </article>
+          <article class="group animate-fade-up flex flex-col items-center gap-2.5 perspective-[1000px] [animation-delay:calc(var(--i)*120ms)]" style="--i:1">
+            <div class="flip-inner relative h-52.5 w-full transform-3d transition-transform duration-700 group-hover:rotate-y-180 group-[.is-flipped]:rotate-y-180 group-[.is-flipped]:group-hover:rotate-y-0">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden bg-white dark:bg-night-surface"><div class="text-5xl" aria-hidden="true">🥛</div><h3 class="text-xl font-bold">Латте</h3><span class="font-bold text-accent-text dark:text-accent-text-night">8,000₮</span></div>
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden rotate-y-180 bg-brand text-on-brand dark:bg-brand-night" aria-hidden="true"><h3 class="text-xl font-bold">Латте</h3><p>Зөөлөн сүүн хөөстэй, уян налархай амттай кофе.</p></div>
+            </div>
+            <button class="flip-btn cursor-pointer rounded-full bg-brand px-4.5 py-2 font-semibold text-on-brand transition hover:scale-105 hover:brightness-110 dark:bg-brand-night" type="button" aria-pressed="false">Латте</button>
+          </article>
+          <article class="group animate-fade-up flex flex-col items-center gap-2.5 perspective-[1000px] [animation-delay:calc(var(--i)*120ms)]" style="--i:2">
+            <div class="flip-inner relative h-52.5 w-full transform-3d transition-transform duration-700 group-hover:rotate-y-180 group-[.is-flipped]:rotate-y-180 group-[.is-flipped]:group-hover:rotate-y-0">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden bg-white dark:bg-night-surface"><div class="text-5xl" aria-hidden="true">🍫</div><h3 class="text-xl font-bold">Мокка</h3><span class="font-bold text-accent-text dark:text-accent-text-night">9,000₮</span></div>
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden rotate-y-180 bg-brand text-on-brand dark:bg-brand-night" aria-hidden="true"><h3 class="text-xl font-bold">Мокка</h3><p>Шоколад ба эспрессогийн төгс хослол.</p></div>
+            </div>
+            <button class="flip-btn cursor-pointer rounded-full bg-brand px-4.5 py-2 font-semibold text-on-brand transition hover:scale-105 hover:brightness-110 dark:bg-brand-night" type="button" aria-pressed="false">Мокка</button>
+          </article>
+          <article class="group animate-fade-up flex flex-col items-center gap-2.5 perspective-[1000px] [animation-delay:calc(var(--i)*120ms)]" style="--i:3">
+            <div class="flip-inner relative h-52.5 w-full transform-3d transition-transform duration-700 group-hover:rotate-y-180 group-[.is-flipped]:rotate-y-180 group-[.is-flipped]:group-hover:rotate-y-0">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden bg-white dark:bg-night-surface"><div class="text-5xl" aria-hidden="true">🧊</div><h3 class="text-xl font-bold">Iced Americano</h3><span class="font-bold text-accent-text dark:text-accent-text-night">7,000₮</span></div>
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden rotate-y-180 bg-brand text-on-brand dark:bg-brand-night" aria-hidden="true"><h3 class="text-xl font-bold">Iced Americano</h3><p>Хөргөсөн, сэргээгч зуны уух зүйл.</p></div>
+            </div>
+            <button class="flip-btn cursor-pointer rounded-full bg-brand px-4.5 py-2 font-semibold text-on-brand transition hover:scale-105 hover:brightness-110 dark:bg-brand-night" type="button" aria-pressed="false">Iced Americano</button>
+          </article>
+          <article class="group animate-fade-up flex flex-col items-center gap-2.5 perspective-[1000px] [animation-delay:calc(var(--i)*120ms)]" style="--i:4">
+            <div class="flip-inner relative h-52.5 w-full transform-3d transition-transform duration-700 group-hover:rotate-y-180 group-[.is-flipped]:rotate-y-180 group-[.is-flipped]:group-hover:rotate-y-0">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden bg-white dark:bg-night-surface"><div class="text-5xl" aria-hidden="true">🥐</div><h3 class="text-xl font-bold">Круассан</h3><span class="font-bold text-accent-text dark:text-accent-text-night">6,000₮</span></div>
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden rotate-y-180 bg-brand text-on-brand dark:bg-brand-night" aria-hidden="true"><h3 class="text-xl font-bold">Круассан</h3><p>Өглөө бүр шинээр жигнэсэн тослог круассан.</p></div>
+            </div>
+            <button class="flip-btn cursor-pointer rounded-full bg-brand px-4.5 py-2 font-semibold text-on-brand transition hover:scale-105 hover:brightness-110 dark:bg-brand-night" type="button" aria-pressed="false">Круассан</button>
+          </article>
+          <article class="group animate-fade-up flex flex-col items-center gap-2.5 perspective-[1000px] [animation-delay:calc(var(--i)*120ms)]" style="--i:5">
+            <div class="flip-inner relative h-52.5 w-full transform-3d transition-transform duration-700 group-hover:rotate-y-180 group-[.is-flipped]:rotate-y-180 group-[.is-flipped]:group-hover:rotate-y-0">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden bg-white dark:bg-night-surface"><div class="text-5xl" aria-hidden="true">🍰</div><h3 class="text-xl font-bold">Cheesecake</h3><span class="font-bold text-accent-text dark:text-accent-text-night">10,000₮</span></div>
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-center shadow-card backface-hidden rotate-y-180 bg-brand text-on-brand dark:bg-brand-night" aria-hidden="true"><h3 class="text-xl font-bold">Cheesecake</h3><p>Нэрстэй зөөлөн чизкейк.</p></div>
+            </div>
+            <button class="flip-btn cursor-pointer rounded-full bg-brand px-4.5 py-2 font-semibold text-on-brand transition hover:scale-105 hover:brightness-110 dark:bg-brand-night" type="button" aria-pressed="false">Cheesecake</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="video" class="mb-12">
+        <h2 class="mb-5 text-3xl font-bold">Кофены үр</h2>
+        <video class="block aspect-video h-auto w-full rounded-xl bg-black object-contain shadow-card" controls preload="metadata" poster="../img/poster-video.jpg" width="1280" height="720">
+          <source src="../video/clip.webm" type="video/webm">
+          <source src="../video/clip.mp4" type="video/mp4">
+          <track kind="captions" src="../video/clip.mn.vtt" srclang="mn" label="Монгол" default>
+          Таны хөтөч видео тоглуулахгүй байна.
+          <a href="../video/clip.mp4">Видеог татаж авах</a>
+        </video>
+      </section>
+
+      <section id="map" class="mb-12">
+        <h2 class="mb-5 text-3xl font-bold">Байршил</h2>
+        <iframe class="block h-60 w-full rounded-xl border-0 shadow-card sm:h-80" title="Улаанбаатар хотын газрын зураг" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin" src="https://www.openstreetmap.org/export/embed.html?bbox=106.88%2C47.90%2C106.94%2C47.93&amp;layer=mapnik"></iframe>
+      </section>
+
+      <section id="feedback" class="mb-12">
+        <h2 class="mb-5 text-3xl font-bold">Санал хүсэлт</h2>
+        <form id="feedback-form" class="space-y-4" novalidate>
+          <div>
+            <label for="name" class="mb-1 block font-medium">Нэр</label>
+            <input type="text" id="name" required minlength="2" autocomplete="name" class="peer block w-full rounded-lg border border-stone-400 bg-white px-3 py-2 text-espresso focus:border-brand dark:border-stone-500 dark:bg-night-surface dark:text-latte [&.touched:invalid]:border-red-700 dark:[&.touched:invalid]:border-red-400">
+            <p class="mt-1 hidden text-sm text-red-700 dark:text-red-300 peer-[.touched:invalid]:block">Нэрээ дор хаяж 2 тэмдэгтээр бичнэ үү.</p>
+          </div>
+          <div>
+            <label for="email" class="mb-1 block font-medium">Имэйл</label>
+            <input type="email" id="email" required autocomplete="email" class="peer block w-full rounded-lg border border-stone-400 bg-white px-3 py-2 text-espresso focus:border-brand dark:border-stone-500 dark:bg-night-surface dark:text-latte [&.touched:invalid]:border-red-700 dark:[&.touched:invalid]:border-red-400">
+            <p class="mt-1 hidden text-sm text-red-700 dark:text-red-300 peer-[.touched:invalid]:block">Зөв имэйл хаяг оруулна уу.</p>
+          </div>
+          <div>
+            <label for="message" class="mb-1 block font-medium">Зурвас</label>
+            <textarea id="message" rows="4" required minlength="10" class="peer block w-full rounded-lg border border-stone-400 bg-white px-3 py-2 text-espresso focus:border-brand dark:border-stone-500 dark:bg-night-surface dark:text-latte [&.touched:invalid]:border-red-700 dark:[&.touched:invalid]:border-red-400"></textarea>
+            <p class="mt-1 hidden text-sm text-red-700 dark:text-red-300 peer-[.touched:invalid]:block">Зурвас дор хаяж 10 тэмдэгт байх ёстой.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <input type="checkbox" id="agree" required class="peer size-4 accent-brand">
+            <label for="agree">Миний мэдээллийг хадгалахыг зөвшөөрч байна</label>
+            <p class="w-full mt-1 hidden text-sm text-red-700 dark:text-red-300 peer-[.touched:invalid]:block">Үргэлжлүүлэхийн тулд зөвшөөрөх шаардлагатай.</p>
+          </div>
+          <button type="submit" class="cursor-pointer rounded-full bg-brand px-4.5 py-2 font-semibold text-on-brand transition hover:scale-105 hover:brightness-110 dark:bg-brand-night">Илгээх</button>
+          <div id="form-ok" class="hidden rounded-lg bg-green-100 p-4 text-green-900 dark:bg-green-900 dark:text-green-100" role="status">Баярлалаа! Таны зурвас илгээгдлээ.</div>
+        </form>
+      </section>
+    </main>
+
+    <aside class="flex flex-col gap-5 self-start sm:flex-row lg:sticky lg:top-5 lg:flex-col">
+      <section class="flex-1 rounded-xl bg-white p-5 shadow-card dark:bg-night-surface">
+        <h2 class="mb-2 text-xl font-bold">Ажлын цаг</h2>
+        <ul>
+          <li>Даваа–Баасан: 08:00 – 21:00</li>
+          <li class="mt-1">Бямба–Ням: 09:00 – 22:00</li>
+        </ul>
+      </section>
+      <section class="flex-1 rounded-xl bg-white p-5 shadow-card dark:bg-night-surface">
+        <h2 class="mb-2 text-xl font-bold">Өнөөдрийн урамшуулал</h2>
+        <p>Хоёр латте авбал нэг круассан <strong>үнэгүй</strong>!</p>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="bg-espresso px-8 py-7 text-latte dark:bg-espresso-night" id="contact">
+    <div class="flex flex-col flex-wrap items-center justify-around gap-4 sm:flex-row">
+      <p>📍 Улаанбаатар, Баянгол дүүрэг</p>
+      <p>📞 <a class="hover:underline focus-visible:underline" href="tel:+97677000000">7700-0000</a></p>
+      <p>✉️ <a class="hover:underline focus-visible:underline" href="mailto:hello@brewbean.mn">hello@brewbean.mn</a></p>
+    </div>
+    <p class="mt-4 text-center text-sm opacity-80">© 2026 Brew &amp; Bean. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

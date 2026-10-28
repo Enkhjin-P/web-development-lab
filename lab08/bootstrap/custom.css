@@ -1,0 +1,117 @@
+/* Лаб 6-гийн өнгө, анимацийг Bootstrap-ийн хувьсагчид холбосон */
+:root, [data-bs-theme="light"] {
+  --brand: #c68b59;          /* Лаб 8, даалгавар 4: брэнд өнгө */
+  --brand-hover: #b87f4d;
+  --on-brand: #1d1410;
+  --espresso: #4b2e1e;
+  --hero-from: #8a5a2b;
+  --accent-text: #8a5a2b;
+  --surface: #ffffff;
+  --shadow: 0 2px 8px rgba(0,0,0,.12);
+  --shadow-hover: 0 10px 24px rgba(0,0,0,.3);
+  --bs-body-bg: #f7efe4;
+  --bs-body-bg-rgb: 247, 239, 228;
+  --bs-body-color: #4b2e1e;
+  --bs-body-color-rgb: 75, 46, 30;
+  --bs-body-font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  --bs-body-line-height: 1.6;
+  --bs-heading-color: var(--bs-body-color);
+  --bs-link-color-rgb: 138, 90, 43;
+  --bs-card-bg: var(--surface);
+  --bs-card-color: var(--bs-body-color);
+  --bs-border-color: rgba(75, 46, 30, .25);
+}
+[data-bs-theme="dark"] {
+  --brand: #d9a066;
+  --brand-hover: #e3b07a;
+  --espresso: #120c09;
+  --hero-from: #6b4423;
+  --accent-text: #e3b07a;
+  --surface: #2b1f19;
+  --shadow: 0 2px 8px rgba(0,0,0,.6);
+  --bs-body-bg: #1d1410;
+  --bs-body-bg-rgb: 29, 20, 16;
+  --bs-body-color: #f1e6d8;
+  --bs-body-color-rgb: 241, 230, 216;
+  --bs-link-color-rgb: 227, 176, 122;
+  --bs-border-color: rgba(241, 230, 216, .3);
+}
+
+/* .btn-brand: Bootstrap-ийн button CSS variable-уудыг дарна */
+.btn-brand {
+  --bs-btn-color: var(--on-brand);
+  --bs-btn-bg: var(--brand);
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-color: var(--on-brand);
+  --bs-btn-hover-bg: var(--brand-hover);
+  --bs-btn-hover-border-color: var(--brand-hover);
+  --bs-btn-active-color: var(--on-brand);
+  --bs-btn-active-bg: var(--brand-hover);
+  --bs-btn-active-border-color: var(--brand-hover);
+  --bs-btn-focus-shadow-rgb: 198, 139, 89;
+  --bs-btn-font-weight: 600;
+  transition: transform .35s, filter .35s, background-color .35s;
+}
+.btn-brand:hover { transform: scale(1.06); filter: brightness(1.08); }
+
+html { scroll-padding-top: 16px; }
+body { overflow-x: hidden; transition: background-color .35s, color .35s; }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+.card-img-top { aspect-ratio: 4 / 3; height: auto; object-fit: cover; }
+.price { color: var(--accent-text); }
+h1, h2, h3, h4, h5, h6 { font-weight: 700; }
+
+/* Header, footer */
+.site-bar {
+  --bs-navbar-color: #f7efe4;
+  --bs-navbar-hover-color: var(--on-brand);
+  --bs-navbar-active-color: var(--on-brand);
+  --bs-navbar-brand-color: #f7efe4;
+  --bs-navbar-brand-hover-color: #fff;
+  background: var(--espresso); color: #f7efe4;
+}
+.site-bar a { color: inherit; text-decoration: none; }
+.site-bar a:hover, .site-bar a:focus-visible { text-decoration: underline; }
+.site-bar .nav-link { transition: background-color .35s, color .35s, transform .35s; }
+.site-bar .nav-link:hover, .site-bar .nav-link:focus-visible { background: var(--brand); color: var(--on-brand); transform: translateY(-2px); text-decoration: none; }
+.site-bar .navbar-toggler { border-color: rgba(247,239,228,.5); }
+.site-bar .navbar-toggler-icon { filter: invert(1); }
+.steam { animation: steam 2.4s ease-in-out infinite; transform-origin: center bottom; }
+
+.hero { background: linear-gradient(135deg, var(--hero-from), var(--espresso)); }
+.hero h1 { color: #fff; animation: fadeUp .8s ease backwards; }
+.hero p { max-width: 560px; animation: fadeUp .8s .2s ease backwards; }
+.hero .btn { animation: fadeUp .8s .4s ease backwards; }
+
+/* Зургийн card */
+.photo { overflow: hidden; box-shadow: var(--shadow); border: 0; border-radius: 12px;
+  animation: fadeUp .6s ease backwards; animation-delay: calc(var(--i) * 120ms);
+  transition: transform .35s, box-shadow .35s; }
+.photo img { transition: transform .6s; }
+.photo:hover, .photo:focus-within { transform: translateY(-6px) scale(1.03); box-shadow: var(--shadow-hover); }
+.photo:hover img, .photo:focus-within img { transform: scale(1.08); }
+.card { --bs-card-bg: var(--surface); --bs-card-color: var(--bs-body-color); --bs-card-border-width: 0; --bs-card-border-radius: 12px; }
+
+/* Эргэдэг цэсний card */
+.flip { perspective: 1000px; animation: fadeUp .6s ease backwards; animation-delay: calc(var(--i) * 120ms); }
+.flip-inner { position: relative; height: 210px; transform-style: preserve-3d; transition: transform .7s; }
+.flip.is-flipped .flip-inner { transform: rotateY(180deg); }
+@media (hover: hover) {
+  .flip:hover .flip-inner { transform: rotateY(180deg); }
+  .flip.is-flipped:hover .flip-inner { transform: rotateY(0); }
+}
+.flip-front, .flip-back { position: absolute; inset: 0; background: var(--surface); border-radius: 12px; box-shadow: var(--shadow); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip-back { transform: rotateY(180deg); background: var(--brand); color: var(--on-brand); }
+
+.map-frame { height: 320px; }
+@media (max-width: 575.98px) { .map-frame { height: 240px; } }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes steam { 0%,100% { opacity: .4; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-3px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+.form-control, .form-control:focus { background-color: var(--surface); color: var(--bs-body-color); }
+.flip-back { --bs-heading-color: var(--on-brand); }
